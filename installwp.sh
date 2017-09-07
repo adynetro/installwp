@@ -1,7 +1,7 @@
 #!/bin/bash -e
 clear
 echo "============================================"
-echo "WordPress Install Script"
+echo "WordPress Install Scripti for Debian"
 echo "============================================"
 echo "Database Name: "
 read -e dbname
@@ -35,7 +35,6 @@ cp wp-config-sample.php wp-config.php
 perl -pi -e "s/database_name_here/$dbname/g" wp-config.php
 perl -pi -e "s/username_here/$dbuser/g" wp-config.php
 perl -pi -e "s/password_here/$dbpass/g" wp-config.php
-echo "('FS_method', 'direct');" >> wp-config.php
 
 #set WP salts
 perl -i -pe'
@@ -47,10 +46,11 @@ perl -i -pe'
   s/put your unique phrase here/salt()/ge
 ' wp-config.php
 
+sed -i "$ ('FS_method', 'direct');"  wp-config.php
 #create uploads folder and set permissions
 mkdir wp-content/uploads
 chmod 775 wp-content/uploads
-chown -R www-data:www.data *
+chown -R www-data:www-data *
 echo "Cleaning..."
 #remove zip file
 rm latest.tar.gz
