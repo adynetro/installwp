@@ -1,7 +1,8 @@
-Install script for latest version of wordpress.
+Install script for wordpress
+----------------------------
 
-Requires database creation.
-------------------------------------------------
+Install script for latest version of wordpress.
+Requires database creation.-
 
 Just copy in your folder and run 
 
