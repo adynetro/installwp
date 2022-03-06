@@ -46,7 +46,7 @@ perl -i -pe'
   s/put your unique phrase here/salt()/ge
 ' wp-config.php
 
-echo  "('FS_method', 'direct');" >>  wp-config.php
+echo  "define('FS_method', 'direct');" >>  wp-config.php
 #create uploads folder and set permissions
 mkdir wp-content/uploads
 chmod 775 wp-content/uploads
